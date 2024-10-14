@@ -1,6 +1,8 @@
-﻿namespace Lab10OOP.Manager.Interfaces;
+﻿using Lab10OOP.Entity;
 
-public class INotificationService
+namespace Lab10OOP.Manager.Interfaces;
+
+public interface INotificationService
 {
-    
+    bool NotifyUser(User user, string message);
 }

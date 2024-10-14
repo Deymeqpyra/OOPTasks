@@ -1,6 +1,10 @@
-﻿namespace Lab10OOP.Manager.Interfaces;
+﻿using Lab10OOP.Entity;
 
-public interface BookManager
+namespace Lab10OOP.Manager.Interfaces;
+
+public interface IBookManager
 {
-    
+    bool DeleteBook(string name, string author);
+    bool EditBook(Book bookToUpdate, Book updatedBook);
+    bool AddBook(Book book);
 }

@@ -2,5 +2,7 @@
 
 public interface ILoggerManager
 {
-    
+    void InfoLogger(string log);
+    void ErrorLogger(string log);
+    public void ShowLog();
 }

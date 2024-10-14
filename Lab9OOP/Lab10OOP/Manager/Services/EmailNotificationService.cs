@@ -3,22 +3,22 @@ using Lab10OOP.Manager.Interfaces;
 
 namespace Lab10OOP.Manager.Services;
 
-public class EmailNotifiactionService : INotificationService
+public class EmailNotificationService : INotificationService
 {
     private ILoggerManager LoggerManager;
 
-    public EmailNotifiactionService(ILoggerManager logger)
+    public EmailNotificationService(ILoggerManager logger)
     {
         LoggerManager = logger;
     }
     public bool NotifyUser(User user, string message)
     {
-        if (user == null || string.IsNullOrEmpty(message))
+        if (user.Email == null || string.IsNullOrEmpty(message))
         {
-            LoggerManager.AddLogger("Invalid input");
+            LoggerManager.ErrorLogger("Invalid input");
             return false;
         }
-        LoggerManager.AddLogger($"User with {user.Email} notified with message: {message}");
+        LoggerManager.InfoLogger($"User with {user.Email} notified with message: {message} at {DateTime.Now}");
         return true;
     }
 }
