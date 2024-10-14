@@ -24,7 +24,7 @@ public class Program
         var calc = new Calculator<int>();
        
         Console.WriteLine(calc.Add(a, b)); 
-        Console.WriteLine(calc.Substract(a, b)); 
+        Console.WriteLine(calc.Subtract(a, b)); 
         Console.WriteLine(calc.Multiply(a, b)); 
         Console.WriteLine(calc.Divide(a, b)); 
         Console.WriteLine(calc.Power(a, b)); 
@@ -35,7 +35,7 @@ public class Program
         var calc = new Calculator<double>();
         
         Console.WriteLine($"{calc.Add(a, b):N1}"); 
-        Console.WriteLine($"{calc.Substract(a, b):N1}"); 
+        Console.WriteLine($"{calc.Subtract(a, b):N1}"); 
         Console.WriteLine($"{calc.Multiply(a, b):N1}"); 
         Console.WriteLine($"{calc.Divide(a, b):N1}"); 
         Console.WriteLine($"{calc.Power(a, b):N1}"); 

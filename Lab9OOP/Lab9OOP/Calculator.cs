@@ -1,43 +1,34 @@
-﻿namespace Lab9OOP;
+﻿using System.Numerics;
+
+namespace Lab9OOP;
 
 public class Calculator<T> 
 {
-        public T Add(T valueA, T valueB)
+        public T Add(T a, T b)
         {
-                dynamic a = valueA;
-                dynamic b = valueB;
-                return (T)a + b;
+                return (T)Convert.ChangeType(Convert.ToDouble(a) + Convert.ToDouble(b), typeof(T));
         }
 
-        public T Substract(T valueA, T valueB)
+        public T Subtract(T a, T b)
         {
-                dynamic a = valueA;
-                dynamic b = valueB;
-                return (T)a - b;
-        }
-        public T Multiply(T valueA, T valueB)
-        {
-                dynamic a = valueA;
-                dynamic b = valueB;
-                return (T)a * b;
+                return (T)Convert.ChangeType(Convert.ToDouble(a) - Convert.ToDouble(b), typeof(T));
         }
 
-        public T Divide(T valueA, T valueB)
+        public T Multiply(T a, T b)
         {
-                dynamic a = valueA;
-                dynamic b = valueB;
-                if (b == 0)
-                { 
-                        return (T)Convert.ChangeType(0, typeof(T));
+                return (T)Convert.ChangeType(Convert.ToDouble(a) * Convert.ToDouble(b), typeof(T));
+        }
+        public T Power(T a, T b)
+        {
+                return (T)Convert.ChangeType(Math.Pow(Convert.ToDouble(a), Convert.ToDouble(b)), typeof(T));
+        }
+
+        public T Divide(T a, T b)
+        {
+                if (Convert.ToDouble(b) == 0)
+                {
+                        throw new DivideByZeroException("Division by zero is not allowed.");
                 }
-
-                return (T)a / b;
-        }
-
-        public T Power(T value, T valueToPower)
-        {
-                dynamic a = value;
-                dynamic b = valueToPower;
-                return (T)Math.Pow(a, b);
+                return (T)Convert.ChangeType(Convert.ToDouble(a) / Convert.ToDouble(b), typeof(T));
         }
 }

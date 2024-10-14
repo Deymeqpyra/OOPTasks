@@ -1,7 +1,15 @@
 ﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:String x:Key="/Default/CodeInspection/ExcludedFiles/FilesAndFoldersToSkip2/=7020124F_002D9FFC_002D4AC3_002D8F3D_002DAAB8E0240759_002Ff_003AThrowHelper_002Ecs_002Fl_003AC_0021_003FUsers_003Fdeyme_003FAppData_003FRoaming_003FJetBrains_003FRider2024_002E2_003Fresharper_002Dhost_003FSourcesCache_003Fc7da56581ee7b20208f09e80b735961e4d5d7b9e5562bfdec94a75c57b391_003FThrowHelper_002Ecs/@EntryIndexedValue">ForceIncluded</s:String>
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=9215f63c_002D75ec_002D45f1_002Dbec5_002Dd4261a04804c/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="should_return_three" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
   &lt;TestAncestor&gt;&#xD;
-    &lt;TestId&gt;xUnit::AE7D8AB8-74EF-4204-9C4F-C22D32B3370D::net8.0::UnitTest.UnitTest1&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::AE7D8AB8-74EF-4204-9C4F-C22D32B3370D::net8.0::UnitTest.UnitTestCalculator.should_return_six_from_multiply&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::AE7D8AB8-74EF-4204-9C4F-C22D32B3370D::net8.0::UnitTest.UnitTestCalculator.should_return_nine_from_pow&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::AE7D8AB8-74EF-4204-9C4F-C22D32B3370D::net8.0::UnitTest.UnitTestCalculator.should_return_double_from_pow&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::AE7D8AB8-74EF-4204-9C4F-C22D32B3370D::net8.0::UnitTest.UnitTestCalculator.should_return_three_from_divide&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::AE7D8AB8-74EF-4204-9C4F-C22D32B3370D::net8.0::UnitTest.UnitTestCalculator.should_handle_double&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::AE7D8AB8-74EF-4204-9C4F-C22D32B3370D::net8.0::UnitTest.UnitTestCalculator.should_return_three_from_subtract&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::AE7D8AB8-74EF-4204-9C4F-C22D32B3370D::net8.0::UnitTest.UnitTestCalculator.should_return_three_from_add&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::AE7D8AB8-74EF-4204-9C4F-C22D32B3370D::net8.0::UnitTest.UnitTestCalculator.should_return_float_from_add&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String>
 	</wpf:ResourceDictionary>
