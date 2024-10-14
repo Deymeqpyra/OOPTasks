@@ -26,7 +26,7 @@ public class LibraryManager : ILibraryManager
             _loggerManager.ErrorLogger("User not found");
             return false;
         }
-        _loggerManager.InfoLogger($"User was subscribed for {category.Name}");
+        _loggerManager.InfoLogger($"User {userToFind.Email} was subscribed for {category.Name}");
         userToFind.SubscribedCategories.Add(category);
         _userManager.EditUser(email, userToFind);
         return true;
@@ -71,6 +71,7 @@ public class LibraryManager : ILibraryManager
         {
             return false;
         }
+        _loggerManager.InfoLogger($"User was edited Age: {updateUser.Age} and Name: {updateUser.Name}");
         return true;
     }
 
@@ -85,6 +86,7 @@ public class LibraryManager : ILibraryManager
         {
             return false;
         }
+        _loggerManager.InfoLogger($"User was deleted {email}");
         return true;
     }
     
@@ -105,19 +107,20 @@ public class LibraryManager : ILibraryManager
         return true;
     }
 
-    public bool UpdateBook(string titleUpdate, Book bookToUpdate)
+    public bool UpdateBook(string titleUpdate, string bookName)
     {
+        var bookToFind = _bookManager.GetAllBooks().FirstOrDefault(x=>x.Title == bookName);
         Book updateBook = new Book()
         {
             Title = titleUpdate,
-            Author = bookToUpdate.Author,
-            Category = bookToUpdate.Category
+            Author = bookToFind.Author,
+            Category = bookToFind.Category
         };
-        if (!_bookManager.EditBook(bookToUpdate, updateBook))
+        if (!_bookManager.EditBook(bookToFind, updateBook))
         {
             return false;
         }
-        NotifyAllUsers(bookToUpdate.Category, $"Book {bookToUpdate.Title} updated to {titleUpdate}");
+        NotifyAllUsers(bookToFind.Category, $"Book {bookToFind.Title} updated to {titleUpdate}");
         return true;
     }
     public bool DeleteBook(Book bookToDelete)

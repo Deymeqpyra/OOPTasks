@@ -12,6 +12,11 @@ public class BookManager : IBookManager
     {
         this.loggerManager = loggerManager;
     }
+
+    public List<Book> GetAllBooks()
+    {
+        return _books;
+    }
     public bool AddBook(Book book)
     {
         if (book == null)

@@ -56,7 +56,15 @@ libraryManager.RegisterUser(
     20,
     "Roma",
     new List<Category>{category4});
+libraryManager.RegisterUser(
+    "test@gmail.com",
+    20,
+    "TEst",
+    new List<Category>{category4});
 
+libraryManager.DeleteUser("test@gmail.com");
+
+libraryManager.UpdateUser("dmytro@gmail.com", 21, "Roma", new List<Category> { category4 });
 
 libraryManager.SubscribeBookCategory(category1, "romka@gmail.com");
 libraryManager.SubscribeBookCategory(category3, "dmytro@gmail.com");
@@ -82,6 +90,8 @@ libraryManager.RegisterBook(
     "Criminal", 
     category4
 );
+
+libraryManager.UpdateBook("Call of Ctulhu", "LoveCraft");
 
 Console.WriteLine("Showing all log...");
 

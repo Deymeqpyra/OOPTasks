@@ -8,7 +8,7 @@ public interface ILibraryManager
     bool UpdateUser(string email, int age, string name, List<Category> categories);
     bool DeleteUser(string email);
     bool RegisterBook(string title, string author, Category category);
-    bool UpdateBook(string title, Book book);
+    bool UpdateBook(string title, string bookName);
     bool DeleteBook(Book book);
     bool SubscribeBookCategory(Category category, string email);
     bool NotifyAllUsers(Category category, string message);
