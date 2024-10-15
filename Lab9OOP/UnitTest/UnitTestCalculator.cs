@@ -70,6 +70,32 @@ public class UnitTestCalculator
         Assert.Equal(expectedResult, actualResult);
     }
     [Fact]
+    public void should_return_error_by_divide_zero()
+    {
+        var calc = new Calculator<double>();
+        const double a = 6.0;
+        const double b = 0;
+        const string expectedExceptionMessage = "Division by zero is not allowed."; 
+        
+        Action act = () => calc.Divide(a, b);
+        
+        DivideByZeroException exception = Assert.Throws<DivideByZeroException>(act);
+        
+        Assert.Equal(expectedExceptionMessage, exception.Message);
+    }
+    [Fact]
+    public void should_return_handle_int_divide()
+    {
+        var calc = new Calculator<int>();
+        const int a = 5;
+        const int b = 2;
+        const int expectedResult = 2;  
+        
+        var actualResult = calc.Divide(a, b);
+        
+        Assert.Equal(expectedResult, actualResult);
+    }
+    [Fact]
     public void should_return_double_from_pow()
     {
         var calc = new Calculator<double>();

@@ -19,10 +19,10 @@ public class Program
         DoubleCalculator(a,b);
     }
 
-    public static void IntegerCalculator(int a, int b)
+    private static void IntegerCalculator(int a, int b)
     {
         var calc = new Calculator<int>();
-       
+
         Console.WriteLine(calc.Add(a, b)); 
         Console.WriteLine(calc.Subtract(a, b)); 
         Console.WriteLine(calc.Multiply(a, b)); 
@@ -30,7 +30,7 @@ public class Program
         Console.WriteLine(calc.Power(a, b)); 
     }
 
-    public static void DoubleCalculator(double a, double b)
+    private static void DoubleCalculator(double a, double b)
     {
         var calc = new Calculator<double>();
         
