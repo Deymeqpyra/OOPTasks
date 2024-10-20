@@ -978,11 +978,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Developing\\Projects\\OOP\\OOPTasks\\Lab9OOP\\UnitTest\\UnitTest.csproj",
+      "projectUniqueName": "E:\\Projects\\OOPTasks\\Lab9OOP\\UnitTest\\UnitTest.csproj",
       "projectName": "UnitTest",
-      "projectPath": "E:\\Developing\\Projects\\OOP\\OOPTasks\\Lab9OOP\\UnitTest\\UnitTest.csproj",
+      "projectPath": "E:\\Projects\\OOPTasks\\Lab9OOP\\UnitTest\\UnitTest.csproj",
       "packagesPath": "C:\\Users\\deyme\\.nuget\\packages\\",
-      "outputPath": "E:\\Developing\\Projects\\OOP\\OOPTasks\\Lab9OOP\\UnitTest\\obj\\",
+      "outputPath": "E:\\Projects\\OOPTasks\\Lab9OOP\\UnitTest\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\deyme\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -997,8 +997,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "E:\\Developing\\Projects\\OOP\\OOPTasks\\Lab9OOP\\Lab9OOP\\Lab9OOP.csproj": {
-              "projectPath": "E:\\Developing\\Projects\\OOP\\OOPTasks\\Lab9OOP\\Lab9OOP\\Lab9OOP.csproj"
+            "E:\\Projects\\OOPTasks\\Lab9OOP\\Lab9OOP\\Lab9OOP.csproj": {
+              "projectPath": "E:\\Projects\\OOPTasks\\Lab9OOP\\Lab9OOP\\Lab9OOP.csproj"
             }
           }
         }

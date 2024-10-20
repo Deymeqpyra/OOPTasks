@@ -220,11 +220,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Developing\\Projects\\OOP\\OOPTasks\\Lab9OOP\\Lab9OOP\\Lab9OOP.csproj",
+      "projectUniqueName": "E:\\Projects\\OOPTasks\\Lab9OOP\\Lab9OOP\\Lab9OOP.csproj",
       "projectName": "Lab9OOP",
-      "projectPath": "E:\\Developing\\Projects\\OOP\\OOPTasks\\Lab9OOP\\Lab9OOP\\Lab9OOP.csproj",
+      "projectPath": "E:\\Projects\\OOPTasks\\Lab9OOP\\Lab9OOP\\Lab9OOP.csproj",
       "packagesPath": "C:\\Users\\deyme\\.nuget\\packages\\",
-      "outputPath": "E:\\Developing\\Projects\\OOP\\OOPTasks\\Lab9OOP\\Lab9OOP\\obj\\",
+      "outputPath": "E:\\Projects\\OOPTasks\\Lab9OOP\\Lab9OOP\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\deyme\\AppData\\Roaming\\NuGet\\NuGet.Config"
