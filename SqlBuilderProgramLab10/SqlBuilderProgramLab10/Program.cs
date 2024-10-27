@@ -2,24 +2,25 @@
 using SqlBuilderProgramLab10.Entity;
 using SqlBuilderProgramLab10.Services;
 
-SqlBuilder sqlBuilder = new PostgreSQLBuilder();
 
-var queryPostgres = sqlBuilder.Select<User>()
-    .OrderBy("RegestrationDate")
-    .OrderByDesc("Name")
-    .Take(10)
-    .Build();
+SqlBuilder builder = null;
 
-sqlBuilder = new MSSQLBuilder();
-var queryMSSQL = sqlBuilder.Select<User>()
-    .OrderBy("RegestrationDate")
-    .OrderByDesc("Name")
-    .Take(10)
-    .Build();
+builder = new PostgreSQLBuilder();
+
+var sqlDirector = new SqlDirector();
+
+sqlDirector.SQLQueryWithOrderByDesc(builder);
+
+sqlDirector.SQLQueryWithOrderByAsc(builder);
+
+sqlDirector.SQLQueryWithTake(builder);
 
 
-queryPostgres.CommandText();
-queryPostgres.CommandParamets();
+builder = new MSSQLBuilder();
 
-queryMSSQL.CommandText();
-queryMSSQL.CommandParamets();
+sqlDirector.SQLQueryWithOrderByDesc(builder);
+
+sqlDirector.SQLQueryWithOrderByAsc(builder);
+
+sqlDirector.SQLQueryWithTake(builder);
+

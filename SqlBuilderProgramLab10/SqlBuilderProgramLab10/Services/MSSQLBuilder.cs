@@ -4,7 +4,6 @@ namespace SqlBuilderProgramLab10.Services;
 
 public class MSSQLBuilder : SqlBuilder
 {
-    private int top = 0;
     public MSSQLBuilder()
     {
         _query = new Query("--------\nMSSQL Command\n---------");
@@ -28,7 +27,7 @@ public class MSSQLBuilder : SqlBuilder
     }
     public override SqlBuilder Take(int count)
     {
-        _query["SELECT"] = $"TOP {count}";
+        _query["SELECT"] = $"TOP {count} *";
         return this;
     }
 }

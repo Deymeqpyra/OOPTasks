@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SqlBuilderProgramLab10")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0c5bb1afc9b845d2692a96111a254cb4c5c2b303")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9582430f1f2fcee0d90154869126d6d38ef55679")]
 [assembly: System.Reflection.AssemblyProductAttribute("SqlBuilderProgramLab10")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SqlBuilderProgramLab10")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
