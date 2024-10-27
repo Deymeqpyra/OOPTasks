@@ -1,0 +1,15 @@
+E:\Projects\OOPTasks\SqlBuilderProgramLab10\SqlBuilderProgramLab10\bin\Debug\net8.0\SqlBuilderProgramLab10.exe
+E:\Projects\OOPTasks\SqlBuilderProgramLab10\SqlBuilderProgramLab10\bin\Debug\net8.0\SqlBuilderProgramLab10.deps.json
+E:\Projects\OOPTasks\SqlBuilderProgramLab10\SqlBuilderProgramLab10\bin\Debug\net8.0\SqlBuilderProgramLab10.runtimeconfig.json
+E:\Projects\OOPTasks\SqlBuilderProgramLab10\SqlBuilderProgramLab10\bin\Debug\net8.0\SqlBuilderProgramLab10.dll
+E:\Projects\OOPTasks\SqlBuilderProgramLab10\SqlBuilderProgramLab10\bin\Debug\net8.0\SqlBuilderProgramLab10.pdb
+E:\Projects\OOPTasks\SqlBuilderProgramLab10\SqlBuilderProgramLab10\obj\Debug\net8.0\SqlBuilderProgramLab10.GeneratedMSBuildEditorConfig.editorconfig
+E:\Projects\OOPTasks\SqlBuilderProgramLab10\SqlBuilderProgramLab10\obj\Debug\net8.0\SqlBuilderProgramLab10.AssemblyInfoInputs.cache
+E:\Projects\OOPTasks\SqlBuilderProgramLab10\SqlBuilderProgramLab10\obj\Debug\net8.0\SqlBuilderProgramLab10.AssemblyInfo.cs
+E:\Projects\OOPTasks\SqlBuilderProgramLab10\SqlBuilderProgramLab10\obj\Debug\net8.0\SqlBuilderProgramLab10.csproj.CoreCompileInputs.cache
+E:\Projects\OOPTasks\SqlBuilderProgramLab10\SqlBuilderProgramLab10\obj\Debug\net8.0\SqlBuilderProgramLab10.sourcelink.json
+E:\Projects\OOPTasks\SqlBuilderProgramLab10\SqlBuilderProgramLab10\obj\Debug\net8.0\SqlBuilderProgramLab10.dll
+E:\Projects\OOPTasks\SqlBuilderProgramLab10\SqlBuilderProgramLab10\obj\Debug\net8.0\refint\SqlBuilderProgramLab10.dll
+E:\Projects\OOPTasks\SqlBuilderProgramLab10\SqlBuilderProgramLab10\obj\Debug\net8.0\SqlBuilderProgramLab10.pdb
+E:\Projects\OOPTasks\SqlBuilderProgramLab10\SqlBuilderProgramLab10\obj\Debug\net8.0\SqlBuilderProgramLab10.genruntimeconfig.cache
+E:\Projects\OOPTasks\SqlBuilderProgramLab10\SqlBuilderProgramLab10\obj\Debug\net8.0\ref\SqlBuilderProgramLab10.dll
