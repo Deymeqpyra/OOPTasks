@@ -7,7 +7,7 @@ public class UserManager : IUserManager
 {
     // private ILoggerManager LoggerManager { get; set; }
     
-    public readonly List<User> ListOfUsers = new List<User>();
+    private List<User> ListOfUsers = new List<User>();
     
     // public UserManager(ILoggerManager loggerManager)
     // {
