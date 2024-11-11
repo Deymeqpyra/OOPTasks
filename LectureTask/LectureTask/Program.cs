@@ -9,13 +9,20 @@ using Microsoft.VisualBasic.FileIO;
 
 
 var serviceProvider = IoCContainer.RegisterServices();
-var invoker = new Invoker(serviceProvider);
+var log = serviceProvider.GetService<Logger>();
+var invoker = new Invoker(serviceProvider, log);
 
 while (true)
 {
     invoker.ShowCommands();
     var choice = Console.ReadLine()?.ToUpper();
-
+    if (choice == "LOGGER")
+    {
+        foreach (var message in log.GetAllMessages())
+        {
+            Console.WriteLine(message);
+        }
+    }
     if (!invoker.ExecuteCommand(choice))
     {
         break;

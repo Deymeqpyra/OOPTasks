@@ -12,6 +12,11 @@ public static class IoCContainer
             .AddSingleton<LowCompressionStrategy>()
             .AddSingleton<MediumCompressionStrategy>()
             .AddSingleton<HighCompressionStrategy>()
+            .AddScoped<ZipFileCompressionCommand>()
+            .AddScoped<ZipFolderCompressionCommand>()
+            .AddScoped<ExitCommand>()
+            .AddScoped<UnZipCommand>()
+            .AddSingleton<Logger>()
             .BuildServiceProvider();
     }
 }
