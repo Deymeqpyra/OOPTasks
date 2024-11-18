@@ -1,4 +1,5 @@
 using LectureTask.Services.Commands;
+using LectureTask.Services.ConsoleWrap;
 using LectureTask.Services.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -6,17 +7,16 @@ namespace LectureTask.Services.Container;
 
 public static class IoCContainer
 {
-    public static IServiceProvider RegisterServices()
+    public static IServiceCollection RegisterServices(this IServiceCollection serviceCollection)
     {
-        return new ServiceCollection()
+        return serviceCollection
             .AddSingleton<LowCompressionStrategy>()
             .AddSingleton<MediumCompressionStrategy>()
             .AddSingleton<HighCompressionStrategy>()
-            .AddScoped<ZipFileCompressionCommand>()
-            .AddScoped<ZipFolderCompressionCommand>()
-            .AddScoped<ExitCommand>()
-            .AddScoped<UnZipCommand>()
-            .AddSingleton<Logger>()
-            .BuildServiceProvider();
+            .AddSingleton<ZipFileCompressionCommand>()
+            .AddSingleton<ZipFolderCompressionCommand>()
+            .AddSingleton<ExitCommand>()
+            .AddSingleton<UnZipCommand>()
+            .AddSingleton<IConsoleWrapper, ConsoleWrapper>();
     }
 }

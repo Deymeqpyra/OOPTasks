@@ -5,27 +5,25 @@ namespace LectureTask.Services.Commands;
 
 public class ZipFileCompressionCommand : ICommand
 {
-    private string sourceFilePath;
-    private string zipFilePath;
+    private string _sourceFilePath;
+    private string _zipFilePath;
     private ICompressionStrategy _strategy;
-
-    public ZipFileCompressionCommand(string sourceFilePath, string zipFilePath)
-    {
-        this.sourceFilePath = sourceFilePath;
-        this.zipFilePath = zipFilePath;
-    }
 
     public void Execute()
     {
-        _strategy.Compress(sourceFilePath, zipFilePath, false);
+        if (_strategy == null)
+            throw new InvalidOperationException("Compression strategy not set.");
+        if (_sourceFilePath == null)
+            throw new InvalidOperationException("Source path not set.");
+        if (_zipFilePath == null)
+            throw new InvalidOperationException("Destination path not set.");
+        _strategy.Compress(_sourceFilePath, _zipFilePath, false);
     }
 
-    public void SetStrategy(ICompressionStrategy strategy)
+    public void SetProperties(string sourceFilePath, string zipFilePath, ICompressionStrategy strategy)
     {
-        if (strategy == null)
-        {
-            throw new InvalidOperationException("Compression strategy is not set.");
-        }
+        _sourceFilePath = sourceFilePath;
+        _zipFilePath = zipFilePath;
         _strategy = strategy;
     }
 }

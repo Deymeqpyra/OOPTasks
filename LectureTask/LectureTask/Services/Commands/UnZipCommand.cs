@@ -5,15 +5,15 @@ namespace LectureTask.Services.Commands;
 
 public class UnZipCommand : ICommand
 {
-    private readonly string _zipFilePath;
-    private readonly string _destinationPath;
+    private string _zipFilePath;
+    private string _destinationPath;
 
-    public UnZipCommand(string zipFilePath, string destinationPath)
+
+    public void SetProperties(string zipFilePath, string destinationPath)
     {
         _zipFilePath = zipFilePath;
         _destinationPath = destinationPath;
     }
-
     public void Execute()
     {
         try

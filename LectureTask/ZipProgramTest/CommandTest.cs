@@ -15,8 +15,8 @@ public class CommandTest
         File.WriteAllText(sourceFilePath, "This is a test file.");
 
         var strategy = new LowCompressionStrategy();
-        var command = new ZipFileCompressionCommand(sourceFilePath, zipFilePath);
-        command.SetStrategy(strategy);
+        var command = new ZipFileCompressionCommand();
+        command.SetProperties(sourceFilePath,zipFilePath,strategy);
 
         // Act
         command.Execute();
@@ -37,9 +37,8 @@ public class CommandTest
         string zipFilePath = "C:\\Users\\deyme\\Desktop\\testNotFileDestination.zip";
 
         var strategy = new LowCompressionStrategy();
-        var command = new ZipFileCompressionCommand(sourceFilePath, zipFilePath);
-        command.SetStrategy(strategy);
-
+        var command = new ZipFileCompressionCommand();
+        command.SetProperties(sourceFilePath,zipFilePath,strategy);
         // Act 
         var exception = Assert.Throws<FileNotFoundException>(() => command.Execute());
         

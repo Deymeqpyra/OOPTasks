@@ -1,5 +1,6 @@
 using System.IO.Compression;
 using LectureTask.Services.Commands;
+using LectureTask.Services.ConsoleWrap;
 using LectureTask.Services.Container;
 using LectureTask.Services.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
@@ -8,36 +9,64 @@ namespace LectureTask.Services;
 
 public class Invoker
 {
+    private const string ZipFileCommandChar = "A";
+    private const string ZipFolderCommandChar = "B";
+    private const string ExitCommandChar = "E";
+    private const string UnzipCommandChar = "U";
+
+    private const string HighCompressionCommandChar = "A";
+    private const string MediumCompressionCommandChar = "B";
+    private const string LowCompressionCommandChar = "C";
+
+
     private readonly Dictionary<string, ICompressionStrategy> _strategy;
     private readonly Dictionary<string, (Func<ICommand> CommandFactory, string Name)> _commands;
-    private ILogger _logger;
     private IServiceProvider _serviceProvider;
+    private IConsoleWrapper _consoleWrapper;
 
-    public Invoker(IServiceProvider serviceProvider, ILogger logger)
+    public Invoker(IServiceProvider serviceProvider)
     {
         _serviceProvider = serviceProvider;
-        _logger = logger;
-        _logger.AddInfoMessage("Logger has set");
+        _consoleWrapper = _serviceProvider.GetService<IConsoleWrapper>();
         _strategy = new Dictionary<string, ICompressionStrategy>
         {
-            {"A", (serviceProvider.GetService<HighCompressionStrategy>()) },
-            {"B", (serviceProvider.GetService<MediumCompressionStrategy>()) },
-            {"C", (serviceProvider.GetService<LowCompressionStrategy>()) }
+            { HighCompressionCommandChar, _serviceProvider.GetService<HighCompressionStrategy>() },
+            { MediumCompressionCommandChar, _serviceProvider.GetService<MediumCompressionStrategy>() },
+            { LowCompressionCommandChar, _serviceProvider.GetService<LowCompressionStrategy>()}
         };
         _commands = new Dictionary<string, (Func<ICommand>, string)>
         {
-            { "A", (() => ZipFileCommand(), "Zip a file") },
-            { "B", (() => ZipFolderCommand(), "Zip a folder") },
-            { "U", (() => UnzipArchiveCommand(), "Unzip an archive") },
-            { "E", (() => ExitMenuCommand(), "Exit") }
+            { ZipFileCommandChar, (() => ZipFileCommand(), "Zip a file") },
+            { ZipFolderCommandChar, (() => ZipFolderCommand(), "Zip a folder") },
+            { UnzipCommandChar, (() => UnzipArchiveCommand(), "Unzip an archive") },
+            { ExitCommandChar, (() => ExitMenuCommand(), "Exit") }
         };
     }
+
+    public void Run()
+    {
+        while (true)
+        {
+            ShowCommands();
+            string choice = Console.ReadLine().ToUpper();
+
+            try
+            {
+                ExecuteCommand(choice);
+            }
+            catch (Exception ex)
+            {
+                _consoleWrapper.DisplayText($"Error occurred: {ex.Message}");
+            }
+        }
+    }
+
     public void ShowCommands()
     {
-        Console.WriteLine("Choose command:");
+        _consoleWrapper.DisplayText("Commands: ");
         foreach (var cmd in _commands)
         {
-            Console.WriteLine($"{cmd.Key} - {cmd.Value.Name}");
+            _consoleWrapper.ShowCommand(cmd.Key, cmd.Value.Name);
         }
     }
 
@@ -50,29 +79,40 @@ public class Invoker
 
     private ICommand UnzipArchiveCommand()
     {
+        _consoleWrapper.DisplayText("Enter the full path to the zip file ");
         var sourcePath = Console.ReadLine();
+        _consoleWrapper.DisplayText("Enter the full path to the destination folder ");
         var targetPath = Console.ReadLine();
-        var unZipCommand = new UnZipCommand(sourcePath, targetPath);
-        _logger.AddInfoMessage($"Created queue of unzip command with this parameters: {sourcePath}, {targetPath}");
+        var unZipCommand = _serviceProvider.GetRequiredService<UnZipCommand>();
+        unZipCommand.SetProperties(sourcePath, targetPath);
 
         return unZipCommand;
     }
 
     private ICommand ZipFolderCommand()
     {
-        var queue = CommandQueue();
+        var queue = _consoleWrapper.CommandQueue();
 
-        var zipCommand = new ZipFolderCompressionCommand(queue.sourcePath, queue.targetPath);
-        zipCommand.SetStrategy(queue.strategy);
+        var zipCommand = _serviceProvider.GetRequiredService<ZipFolderCompressionCommand>();
+        if (!_strategy.TryGetValue(queue.strategy, out var compressionStrategy))
+        {
+            throw new ArgumentException("Invalid compression level");
+        }
+
+        zipCommand.SetProperties(queue.sourcePath, queue.targetPath, compressionStrategy);
         return zipCommand;
     }
 
     private ICommand ZipFileCommand()
     {
-        var queue = CommandQueue();
+        var queue = _consoleWrapper.CommandQueue();
+        if (!_strategy.TryGetValue(queue.strategy, out var compressionStrategy))
+        {
+            throw new ArgumentException("Invalid compression level");
+        }
 
-        var zipCommand = new ZipFileCompressionCommand(queue.sourcePath, queue.targetPath);
-        zipCommand.SetStrategy(queue.strategy);
+        var zipCommand = _serviceProvider.GetRequiredService<ZipFileCompressionCommand>();
+        zipCommand.SetProperties(queue.sourcePath, queue.targetPath, compressionStrategy);
         return zipCommand;
     }
 
@@ -82,26 +122,10 @@ public class Invoker
         {
             var command = commandInfo.CommandFactory();
             command.Execute();
-            _logger.AddInfoMessage($"Executed command {command}");
             return true;
         }
 
-       
+        _consoleWrapper.DisplayText("Invalid Input");
         return true;
-    }
-   
-    private (string sourcePath, string targetPath, ICompressionStrategy strategy) CommandQueue()
-    {
-        var sourcePath = Console.ReadLine();
-        var targetPath = Console.ReadLine();
-        Console.Write("Choose compression level:\n A - Fastest \n B - Optimal \n C - NoCompression \n ");
-        var choice = Console.ReadLine()!.ToUpper();
-        if (!_strategy.TryGetValue(choice, out var compressionStrategy))
-        {
-            throw new ArgumentException("Invalid compression level");
-        }
-        _logger.AddInfoMessage($"Created queue of command with this parameters: {sourcePath}, {targetPath}, {compressionStrategy}");
-        
-        return (sourcePath!, targetPath!, compressionStrategy);
     }
 }
