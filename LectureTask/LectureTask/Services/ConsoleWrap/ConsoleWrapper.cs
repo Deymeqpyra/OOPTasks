@@ -14,6 +14,14 @@ public class ConsoleWrapper : IConsoleWrapper
         Console.WriteLine($"{key}: {command}");
     }
 
+    public (string sourcePath, string destinationPath) CommandUnzip()
+    {
+        Console.WriteLine("Enter the path to zip file:");
+        var sourcePath = Console.ReadLine();
+        Console.WriteLine("Enter the full path to the destination folder ");
+        var targetPath = Console.ReadLine();
+        return (sourcePath: sourcePath, destinationPath: targetPath);
+    }
     public (string sourcePath, string targetPath, string strategy) CommandQueue()
     {
         Console.WriteLine($"Enter the full path to the source");

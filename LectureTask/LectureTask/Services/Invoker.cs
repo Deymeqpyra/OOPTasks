@@ -79,12 +79,9 @@ public class Invoker
 
     private ICommand UnzipArchiveCommand()
     {
-        _consoleWrapper.DisplayText("Enter the full path to the zip file ");
-        var sourcePath = Console.ReadLine();
-        _consoleWrapper.DisplayText("Enter the full path to the destination folder ");
-        var targetPath = Console.ReadLine();
+        var commandProperties = _consoleWrapper.CommandUnzip();
         var unZipCommand = _serviceProvider.GetRequiredService<UnZipCommand>();
-        unZipCommand.SetProperties(sourcePath, targetPath);
+        unZipCommand.SetProperties(commandProperties.sourcePath, commandProperties.destinationPath);
 
         return unZipCommand;
     }
