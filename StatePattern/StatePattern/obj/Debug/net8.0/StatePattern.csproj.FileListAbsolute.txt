@@ -1,0 +1,15 @@
+E:\Projects\OOPTasks\StatePattern\StatePattern\bin\Debug\net8.0\StatePattern.exe
+E:\Projects\OOPTasks\StatePattern\StatePattern\bin\Debug\net8.0\StatePattern.deps.json
+E:\Projects\OOPTasks\StatePattern\StatePattern\bin\Debug\net8.0\StatePattern.runtimeconfig.json
+E:\Projects\OOPTasks\StatePattern\StatePattern\bin\Debug\net8.0\StatePattern.dll
+E:\Projects\OOPTasks\StatePattern\StatePattern\bin\Debug\net8.0\StatePattern.pdb
+E:\Projects\OOPTasks\StatePattern\StatePattern\obj\Debug\net8.0\StatePattern.GeneratedMSBuildEditorConfig.editorconfig
+E:\Projects\OOPTasks\StatePattern\StatePattern\obj\Debug\net8.0\StatePattern.AssemblyInfoInputs.cache
+E:\Projects\OOPTasks\StatePattern\StatePattern\obj\Debug\net8.0\StatePattern.AssemblyInfo.cs
+E:\Projects\OOPTasks\StatePattern\StatePattern\obj\Debug\net8.0\StatePattern.csproj.CoreCompileInputs.cache
+E:\Projects\OOPTasks\StatePattern\StatePattern\obj\Debug\net8.0\StatePattern.sourcelink.json
+E:\Projects\OOPTasks\StatePattern\StatePattern\obj\Debug\net8.0\StatePattern.dll
+E:\Projects\OOPTasks\StatePattern\StatePattern\obj\Debug\net8.0\refint\StatePattern.dll
+E:\Projects\OOPTasks\StatePattern\StatePattern\obj\Debug\net8.0\StatePattern.pdb
+E:\Projects\OOPTasks\StatePattern\StatePattern\obj\Debug\net8.0\StatePattern.genruntimeconfig.cache
+E:\Projects\OOPTasks\StatePattern\StatePattern\obj\Debug\net8.0\ref\StatePattern.dll
