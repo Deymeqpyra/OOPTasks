@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "KZ9qRLGmrXo=",
+  "success": true,
+  "projectFilePath": "E:\\Projects\\OOPTasks\\Lab11\\Laboratory11\\Laboratory11\\Laboratory11.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\deyme\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\8.0.1\\microsoft.extensions.dependencyinjection.8.0.1.nupkg.sha512",
+    "C:\\Users\\deyme\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.2\\microsoft.extensions.dependencyinjection.abstractions.8.0.2.nupkg.sha512"
+  ],
+  "logs": []
+}

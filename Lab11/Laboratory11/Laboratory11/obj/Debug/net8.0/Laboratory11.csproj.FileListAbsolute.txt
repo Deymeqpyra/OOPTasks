@@ -1,0 +1,37 @@
+D:\OA\C#\3 курс\OOP\Laboratories\Lab11\Laboratory11\Laboratory11\obj\Debug\net8.0\Laboratory11.csproj.AssemblyReference.cache
+D:\OA\C#\3 курс\OOP\Laboratories\Lab11\Laboratory11\Laboratory11\obj\Debug\net8.0\Laboratory11.GeneratedMSBuildEditorConfig.editorconfig
+D:\OA\C#\3 курс\OOP\Laboratories\Lab11\Laboratory11\Laboratory11\obj\Debug\net8.0\Laboratory11.AssemblyInfoInputs.cache
+D:\OA\C#\3 курс\OOP\Laboratories\Lab11\Laboratory11\Laboratory11\obj\Debug\net8.0\Laboratory11.AssemblyInfo.cs
+D:\OA\C#\3 курс\OOP\Laboratories\Lab11\Laboratory11\Laboratory11\obj\Debug\net8.0\Laboratory11.csproj.CoreCompileInputs.cache
+D:\OA\C#\3 курс\OOP\Laboratories\Lab11\Laboratory11\Laboratory11\bin\Debug\net8.0\Laboratory11.exe
+D:\OA\C#\3 курс\OOP\Laboratories\Lab11\Laboratory11\Laboratory11\bin\Debug\net8.0\Laboratory11.deps.json
+D:\OA\C#\3 курс\OOP\Laboratories\Lab11\Laboratory11\Laboratory11\bin\Debug\net8.0\Laboratory11.runtimeconfig.json
+D:\OA\C#\3 курс\OOP\Laboratories\Lab11\Laboratory11\Laboratory11\bin\Debug\net8.0\Laboratory11.dll
+D:\OA\C#\3 курс\OOP\Laboratories\Lab11\Laboratory11\Laboratory11\bin\Debug\net8.0\Laboratory11.pdb
+D:\OA\C#\3 курс\OOP\Laboratories\Lab11\Laboratory11\Laboratory11\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.dll
+D:\OA\C#\3 курс\OOP\Laboratories\Lab11\Laboratory11\Laboratory11\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\OA\C#\3 курс\OOP\Laboratories\Lab11\Laboratory11\Laboratory11\obj\Debug\net8.0\Laborato.521AF29A.Up2Date
+D:\OA\C#\3 курс\OOP\Laboratories\Lab11\Laboratory11\Laboratory11\obj\Debug\net8.0\Laboratory11.dll
+D:\OA\C#\3 курс\OOP\Laboratories\Lab11\Laboratory11\Laboratory11\obj\Debug\net8.0\refint\Laboratory11.dll
+D:\OA\C#\3 курс\OOP\Laboratories\Lab11\Laboratory11\Laboratory11\obj\Debug\net8.0\Laboratory11.pdb
+D:\OA\C#\3 курс\OOP\Laboratories\Lab11\Laboratory11\Laboratory11\obj\Debug\net8.0\Laboratory11.genruntimeconfig.cache
+D:\OA\C#\3 курс\OOP\Laboratories\Lab11\Laboratory11\Laboratory11\obj\Debug\net8.0\ref\Laboratory11.dll
+E:\Projects\OOPTasks\Lab11\Laboratory11\Laboratory11\bin\Debug\net8.0\Laboratory11.exe
+E:\Projects\OOPTasks\Lab11\Laboratory11\Laboratory11\bin\Debug\net8.0\Laboratory11.deps.json
+E:\Projects\OOPTasks\Lab11\Laboratory11\Laboratory11\bin\Debug\net8.0\Laboratory11.runtimeconfig.json
+E:\Projects\OOPTasks\Lab11\Laboratory11\Laboratory11\bin\Debug\net8.0\Laboratory11.dll
+E:\Projects\OOPTasks\Lab11\Laboratory11\Laboratory11\bin\Debug\net8.0\Laboratory11.pdb
+E:\Projects\OOPTasks\Lab11\Laboratory11\Laboratory11\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.dll
+E:\Projects\OOPTasks\Lab11\Laboratory11\Laboratory11\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+E:\Projects\OOPTasks\Lab11\Laboratory11\Laboratory11\obj\Debug\net8.0\Laboratory11.csproj.AssemblyReference.cache
+E:\Projects\OOPTasks\Lab11\Laboratory11\Laboratory11\obj\Debug\net8.0\Laboratory11.GeneratedMSBuildEditorConfig.editorconfig
+E:\Projects\OOPTasks\Lab11\Laboratory11\Laboratory11\obj\Debug\net8.0\Laboratory11.AssemblyInfoInputs.cache
+E:\Projects\OOPTasks\Lab11\Laboratory11\Laboratory11\obj\Debug\net8.0\Laboratory11.AssemblyInfo.cs
+E:\Projects\OOPTasks\Lab11\Laboratory11\Laboratory11\obj\Debug\net8.0\Laboratory11.csproj.CoreCompileInputs.cache
+E:\Projects\OOPTasks\Lab11\Laboratory11\Laboratory11\obj\Debug\net8.0\Laboratory11.sourcelink.json
+E:\Projects\OOPTasks\Lab11\Laboratory11\Laboratory11\obj\Debug\net8.0\Laborato.521AF29A.Up2Date
+E:\Projects\OOPTasks\Lab11\Laboratory11\Laboratory11\obj\Debug\net8.0\Laboratory11.dll
+E:\Projects\OOPTasks\Lab11\Laboratory11\Laboratory11\obj\Debug\net8.0\refint\Laboratory11.dll
+E:\Projects\OOPTasks\Lab11\Laboratory11\Laboratory11\obj\Debug\net8.0\Laboratory11.pdb
+E:\Projects\OOPTasks\Lab11\Laboratory11\Laboratory11\obj\Debug\net8.0\Laboratory11.genruntimeconfig.cache
+E:\Projects\OOPTasks\Lab11\Laboratory11\Laboratory11\obj\Debug\net8.0\ref\Laboratory11.dll
