@@ -19,8 +19,7 @@ namespace Laboratory11
 
             if (handler == null)
             {
-                var requestTypeName = typeof(TRequest).Name;
-                throw new InvalidOperationException($"Handler for {requestTypeName} not found.");
+                throw new InvalidOperationException($"Handler for {typeof(TRequest).Name} not found.");
             }
 
             return await handler.Handle(request);
@@ -34,7 +33,7 @@ namespace Laboratory11
             HandleResult result = new HandleResult
             {
                 Success = true,
-                Message = "Notification processed successfully."
+                Message = "Notification processed successfully." // status success
             };
 
             foreach (var handler in handlers)

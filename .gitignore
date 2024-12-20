@@ -1,3 +1,9 @@
 /bin
 /obj
 /.idea
+
+/FinalProjectOOP/.idea
+/FinalProjectOOP/Domain/bin
+/FinalProjectOOP/Domain/obj
+/FinalProjectOOP/Infrastructure/bin
+/FinalProjectOOP/Infrastructure/obj
