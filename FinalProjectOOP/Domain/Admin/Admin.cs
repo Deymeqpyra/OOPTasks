@@ -4,13 +4,11 @@ namespace Domain.Admin;
 
 public class Admin : User.User
 {
-    public AdminId Id { get; }
     private string _password;
 
-    public Admin(AdminId id, string password, string adminUserName, string roleType) : base(UserId.New(),
+    public Admin(UserId id, string password, string adminUserName, string roleType) : base(id,
         adminUserName, roleType)
     {
-        Id = id;
         _password = password;
     }
 }
