@@ -8,10 +8,10 @@ public class User
     private string Name { get; set; }
     private string Role { get; set; } 
 
-    public User(UserId id, string name, string roleType)    
+    public User(UserId id, string name, string role)    
     {
         Id = id;
         Name = name;
-        Role = roleType;
+        Role = role;
     }
 }

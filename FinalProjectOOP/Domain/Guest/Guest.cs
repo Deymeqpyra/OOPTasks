@@ -6,7 +6,7 @@ public class Guest : User.User
 {
     public DateTime WasCreated { get; }
 
-    private Guest(UserId id, DateTime wasCreated, string name, string roleName) : base(id, name, roleName)
+    private Guest(UserId id, DateTime wasCreated, string name, string role) : base(id, name, role)
     {
         WasCreated = wasCreated;
     }
