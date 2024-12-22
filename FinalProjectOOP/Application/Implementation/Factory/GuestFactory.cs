@@ -1,6 +1,7 @@
 using Application.Abstraction.Interfaces;
 using Application.Implementation.Exceptions.User;
 using Domain.Admin;
+using Domain.Guest;
 using Domain.User;
 
 namespace Application.Implementation.Factory;
@@ -14,8 +15,8 @@ public class GuestFactory : IUserFactory
         {
             throw new GuestException("The parameters passed are invalid.");
         }
-        string passwordFromParameters = additionalParams[0].ToString()!;
+        DateTime dateWasCreated = additionalParams[0] is DateTime ? (DateTime)additionalParams[0] : default;
         
-        return Admin.Create(UserId.New(), passwordFromParameters, name, guestRole);
+        return Guest.Create(UserId.New(), dateWasCreated , name, guestRole);
     }
 }

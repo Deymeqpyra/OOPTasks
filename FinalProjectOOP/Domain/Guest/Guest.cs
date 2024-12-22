@@ -10,5 +10,6 @@ public class Guest : User.User
     {
         WasCreated = wasCreated;
     }
-
+    public static Guest Create(UserId id, DateTime dateCreated, string name, string role)
+        => new(id, dateCreated, name, role);
 }
