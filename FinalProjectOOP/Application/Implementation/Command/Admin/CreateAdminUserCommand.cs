@@ -1,4 +1,5 @@
 using Application.Abstraction.Interfaces;
+using Application.Implementation.Exceptions.User;
 using Domain.User;
 using MediatR;
 
@@ -23,8 +24,8 @@ public class CreateAdminUserCommandHandler(IUserManager userManager, ILogger log
         }
         catch (Exception e)
         {
-            logger.ErrorMessage($"While created user {e.Message}");
-            throw;
+            logger.ErrorMessage($"While created user {e.Message}", nameof(CreateAdminUserCommand));
+            throw new UserUnknownException();
         }
     }
 }

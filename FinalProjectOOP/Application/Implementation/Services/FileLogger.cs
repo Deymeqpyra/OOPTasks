@@ -13,7 +13,7 @@ public class FileLogger :  ILogger
     
     public string InfoMessage(string message)
     {
-        string infoMessage = $"[FILE] INFO: {message}; DATE UTC: {DateTime.UtcNow}";
+        string infoMessage = $"[{DateTime.UtcNow}] [FILE] INFO: {message}; ";
         using (var writer = new StreamWriter(_filePath, true))
         {
             writer.WriteLine(infoMessage);
@@ -21,9 +21,9 @@ public class FileLogger :  ILogger
         return infoMessage;
     }
 
-    public string ErrorMessage(string message)
+    public string ErrorMessage(string message, string className)
     {
-        string errorMessage = $"[FILE] ERROR: {message}; DATE UTC: {DateTime.UtcNow}";
+        string errorMessage = $"[{DateTime.UtcNow}] [FILE] ERROR: {message}; \n LOCATION: {className};";
         using (var writer = new StreamWriter(_filePath, true))
         {
             writer.WriteLine(errorMessage);
@@ -33,7 +33,7 @@ public class FileLogger :  ILogger
 
     public string WarnMessage(string message)
     {
-        string warnMessage = $"[FILE] WARN: {message}; DATE UTC: {DateTime.UtcNow}";
+        string warnMessage = $"[{DateTime.UtcNow}] [FILE] WARN: {message};";
         using (var writer = new StreamWriter(_filePath, true))
         {
             writer.WriteLine(warnMessage);

@@ -10,7 +10,7 @@ public class DeleteAdminUserCommand : IRequest<User>
     public required Guid AdminId { get; init; }
 }
 
-public class DeleteAdminUserCommandHandler(IUserManager userManager, IUserRepository repository) : IRequestHandler<DeleteAdminUserCommand, User>
+public class DeleteAdminUserCommandHandler(IUserManager userManager, IUserRepository repository, ILogger logger) : IRequestHandler<DeleteAdminUserCommand, User>
 {
     public async Task<User> Handle(DeleteAdminUserCommand request, CancellationToken cancellationToken)
     {
@@ -18,20 +18,25 @@ public class DeleteAdminUserCommandHandler(IUserManager userManager, IUserReposi
         var user = await repository.GetUserByIdAsync(userId, cancellationToken);
         return await user.Match(
             async x => await HandleDelete(x, cancellationToken),
-            () => throw new UserNotFoundException(userId));
+            () =>
+            {
+                logger.ErrorMessage($"User does not exist, with user id: {userId}", nameof(DeleteAdminUserCommandHandler));
+                throw new UserNotFoundException(userId);
+            });
     }
 
     private async Task<User> HandleDelete(User user, CancellationToken cancellationToken)
     {
         try
         {
-            return await userManager.DeleteUser(user, cancellationToken);
+            var userFromResponse = await userManager.DeleteUser(user, cancellationToken);
+            logger.InfoMessage($"Successfully deleted user with Id: {user.Id}");
+            return userFromResponse;
         }
         catch (Exception e)
         {
-            // TODO: Logger
-            Console.WriteLine(e);
-            throw;
+            logger.ErrorMessage($"Unknown error while deleting user. Message: {e.Message}", nameof(DeleteAdminUserCommand));
+            throw new UserUnknownException();
         }
     }
 }

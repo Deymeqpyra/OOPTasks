@@ -15,10 +15,9 @@ public class ConsoleApp(ISender sender)
         var choice = Console.ReadLine();
         if (choice!.ToLower() == "yes")
         {
-            var input = new CreateAdminUserCommand
+            var input = new DeleteAdminUserCommand
             {
-                Name = "TestAnton12",
-                Password = "password1"
+                AdminId = Guid.NewGuid(),
             };
             CancellationToken cancellationToken = new CancellationToken();
             try
