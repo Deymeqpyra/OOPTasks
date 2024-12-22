@@ -1,8 +1,6 @@
 using Application.Abstraction.Interfaces;
 using Application.Implementation.Command.Admin;
 using Application.Implementation.Command.Guest;
-using Domain.User;
-using Infrastructure.Persistence;
 using MediatR;
 using Presentation.Enum;
 
@@ -17,6 +15,11 @@ public class ConsoleApp(ISender sender, IUserManager userManager)
     private const string deleteGuestUser = "Delete Guest User";
     private const string getUsers = "Get Users";
     private const string exit = "Exit";
+    
+    private const string codeSuccess = "[CODE] 200 SUCCESS";
+    private const string codeUnknown = "[CODE] 500 INTERNAL SERVER ERROR";
+    private const string codeNotFound = "[CODE] 404 NOT FOUND";
+
 
     public async Task RunAsync()
     {
@@ -78,8 +81,18 @@ public class ConsoleApp(ISender sender, IUserManager userManager)
         {
             AdminId = userToDeleteId
         };
-        await sender.Send(input, cancellationToken);
+        try
+        {
+            Console.WriteLine(codeSuccess);
+            await sender.Send(input, cancellationToken);
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine($"{codeUnknown} " + e.Message);
+            throw;
+        }
     }
+
     private async Task DeleteGuestUserAsync()
     {
         Console.WriteLine("Write the ID of user to delete");
@@ -88,7 +101,16 @@ public class ConsoleApp(ISender sender, IUserManager userManager)
         {
             UserId = userToDeleteId
         };
-        await sender.Send(input, cancellationToken);
+        try
+        {
+            Console.WriteLine(codeSuccess);
+            await sender.Send(input, cancellationToken);
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine($"{codeUnknown} " + e.Message);
+            throw;
+        }
     }
 
     private async Task CreateAdminUserAsync()
@@ -102,8 +124,18 @@ public class ConsoleApp(ISender sender, IUserManager userManager)
             Name = name,
             Password = password
         };
-        await sender.Send(input, cancellationToken);
+        try
+        {
+            Console.WriteLine(codeSuccess);
+            await sender.Send(input, cancellationToken);
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine($"{codeUnknown} " + e.Message);
+            throw;
+        }
     }
+
     private async Task CreateGuestUserAsync()
     {
         Console.WriteLine("Write the Guest name");
@@ -112,17 +144,32 @@ public class ConsoleApp(ISender sender, IUserManager userManager)
         {
             Name = name
         };
-        await sender.Send(input, cancellationToken);
+        try
+        {
+            Console.WriteLine(codeSuccess);
+            await sender.Send(input, cancellationToken);
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine($"{codeUnknown} " + e.Message);
+            throw;
+        }
     }
+
     private async Task GetUsersAsync()
     {
         Console.WriteLine("List of users:");
         var userList = await userManager.GetUsers(cancellationToken);
+        if (userList == null)
+        {
+            Console.WriteLine(codeNotFound);
+        }
         int number = 0;
-        const int stepToAdd = 1; 
+        const int stepToAdd = 1;
         foreach (var users in userList)
         {
-            Console.WriteLine((number + stepToAdd) + $"[{users.Id}] - Name: {users.Name} | Role: {users.Role}");
+            number += stepToAdd;
+            Console.WriteLine(number + $"[{users.Id}] - Name: {users.Name} | Role: {users.Role}");
         }
     }
 }

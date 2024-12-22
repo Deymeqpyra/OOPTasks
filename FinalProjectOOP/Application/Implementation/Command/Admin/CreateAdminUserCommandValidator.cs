@@ -7,6 +7,7 @@ public class CreateAdminUserCommandValidator : AbstractValidator<CreateAdminUser
     public CreateAdminUserCommandValidator()
     {
         RuleFor(x=>x.Name).NotEmpty().MinimumLength(3).MaximumLength(30);
-        RuleFor(x => x.Password).NotEmpty().MinimumLength(8);
+        RuleFor(x => x.Password).NotEmpty().WithMessage("Password is required")
+            .MinimumLength(8).WithMessage("Password must be between 8 and 20 characters");
     }
 }

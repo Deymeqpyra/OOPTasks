@@ -25,7 +25,6 @@ public static class ConfigurePersistence
                 .UseSnakeCaseNamingConvention()
                 .ConfigureWarnings(w=>w.Ignore(CoreEventId.ManyServiceProvidersCreatedWarning)));
 
-        services.AddScoped<ApplicationDbContextInitializer>();
         services.AddRepositories();
     }
 

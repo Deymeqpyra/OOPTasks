@@ -1,0 +1,16 @@
+E:\Projects\OOPTasks\FinalProjectOOP\ProjectTest.Data\bin\Debug\net8.0\ProjectTest.Data.deps.json
+E:\Projects\OOPTasks\FinalProjectOOP\ProjectTest.Data\bin\Debug\net8.0\ProjectTest.Data.dll
+E:\Projects\OOPTasks\FinalProjectOOP\ProjectTest.Data\bin\Debug\net8.0\ProjectTest.Data.pdb
+E:\Projects\OOPTasks\FinalProjectOOP\ProjectTest.Data\bin\Debug\net8.0\Domain.dll
+E:\Projects\OOPTasks\FinalProjectOOP\ProjectTest.Data\bin\Debug\net8.0\Domain.pdb
+E:\Projects\OOPTasks\FinalProjectOOP\ProjectTest.Data\obj\Debug\net8.0\ProjectTest.Data.csproj.AssemblyReference.cache
+E:\Projects\OOPTasks\FinalProjectOOP\ProjectTest.Data\obj\Debug\net8.0\ProjectTest.Data.GeneratedMSBuildEditorConfig.editorconfig
+E:\Projects\OOPTasks\FinalProjectOOP\ProjectTest.Data\obj\Debug\net8.0\ProjectTest.Data.AssemblyInfoInputs.cache
+E:\Projects\OOPTasks\FinalProjectOOP\ProjectTest.Data\obj\Debug\net8.0\ProjectTest.Data.AssemblyInfo.cs
+E:\Projects\OOPTasks\FinalProjectOOP\ProjectTest.Data\obj\Debug\net8.0\ProjectTest.Data.csproj.CoreCompileInputs.cache
+E:\Projects\OOPTasks\FinalProjectOOP\ProjectTest.Data\obj\Debug\net8.0\ProjectTest.Data.sourcelink.json
+E:\Projects\OOPTasks\FinalProjectOOP\ProjectTest.Data\obj\Debug\net8.0\ProjectT.EE9FF5B1.Up2Date
+E:\Projects\OOPTasks\FinalProjectOOP\ProjectTest.Data\obj\Debug\net8.0\ProjectTest.Data.dll
+E:\Projects\OOPTasks\FinalProjectOOP\ProjectTest.Data\obj\Debug\net8.0\refint\ProjectTest.Data.dll
+E:\Projects\OOPTasks\FinalProjectOOP\ProjectTest.Data\obj\Debug\net8.0\ProjectTest.Data.pdb
+E:\Projects\OOPTasks\FinalProjectOOP\ProjectTest.Data\obj\Debug\net8.0\ref\ProjectTest.Data.dll

@@ -1,9 +1,11 @@
 using System.Reflection;
 using Application.Abstraction.Interfaces;
+using Application.Common.Behaviours;
 using Application.Implementation.Factory;
 using Application.Implementation.Manager;
 using Application.Implementation.Services;
 using FluentValidation;
+using MediatR;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -15,6 +17,7 @@ public static class ConfigureApplication
     {
         services.AddMediatR(cfg=>cfg.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly()));
         services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
+        services.AddTransient(typeof(IPipelineBehavior<,>), typeof(ValidationBehaviour<,>));
         services.AddSingleton<IUserManager, UserManager>();
         services.AddSingleton<ILogger>(provider =>
         {

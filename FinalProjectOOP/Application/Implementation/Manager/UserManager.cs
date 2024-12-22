@@ -56,8 +56,8 @@ public class UserManager : IUserManager, IEnumerable<User>
             logger.ErrorMessage($"User type was not found, while creating a new user factory.", nameof(UserManager));
             throw new UserFactoryNotFoundException();
         }
-
-        if (name == null || additionalParams == null)
+        
+        if (name == null || String.IsNullOrEmpty(name) || additionalParams == null)
         {
             logger.ErrorMessage($"Name and role and additional parameters are required.", nameof(name));
             throw new EmptyCrenditalsException();

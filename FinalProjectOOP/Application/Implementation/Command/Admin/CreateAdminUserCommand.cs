@@ -16,6 +16,17 @@ public class CreateAdminUserCommandHandler(IUserManager userManager, ILogger log
     public async Task<User> Handle(CreateAdminUserCommand adminRole, CancellationToken cancellationToken)
     {
         const string admin = "Admin";
+        const int minRequiredLength = 8;
+        if (adminRole.Password.Length < minRequiredLength)
+        {
+            logger.WarnMessage("Password length is too short.");
+            throw new PasswordIsWeakException();
+        }
+        if (!adminRole.Name.Any())
+        {
+            logger.WarnMessage("UserName is empty.");
+            throw new UserNameIsEmpty();
+        }
         try
         {
             var user = await userManager.CreateUser(adminRole.Name, admin, [adminRole.Password], cancellationToken);
