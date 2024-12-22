@@ -1,4 +1,5 @@
 using Domain.User;
+using Optional;
 
 namespace Application.Abstraction.Interfaces;
 

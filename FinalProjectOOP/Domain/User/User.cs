@@ -5,8 +5,8 @@ public class User
 {
     public UserId Id { get; }
     
-    private string Name { get; set; }
-    private string Role { get; set; } 
+    public string Name { get; private set; }
+    public string Role { get; private set; } 
 
     public User(UserId id, string name, string role)    
     {

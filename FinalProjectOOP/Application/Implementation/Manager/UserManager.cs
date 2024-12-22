@@ -3,20 +3,23 @@ using Application.Abstraction.Queries;
 using Application.Implementation.Exceptions.User;
 using Application.Implementation.Factory;
 using Domain.User;
+using Optional;
 
 namespace Application.Implementation.Manager;
 
 public class UserManager : IUserManager
 {
-    public readonly IUserRepository userRepository;
-    public readonly IUserQueries userQueries;
+    private readonly IUserRepository userRepository;
+    private readonly IUserQueries userQueries;
+    private readonly ILogger logger;
     private readonly Dictionary<string, IUserFactory> _factories;
 
 
-    public UserManager(IUserRepository userRepository, IUserQueries userQueries)
+    public UserManager(IUserRepository userRepository, IUserQueries userQueries, ILogger logger)
     {
         this.userRepository = userRepository;
         this.userQueries = userQueries;
+        this.logger = logger;
         _factories = new Dictionary<string, IUserFactory>
         {
             { "Admin", new AdminFactory() },

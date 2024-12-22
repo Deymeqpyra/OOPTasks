@@ -17,7 +17,7 @@ public class ConsoleApp(ISender sender)
         {
             var input = new CreateAdminUserCommand
             {
-                Name = "TestAnton",
+                Name = "TestAnton12",
                 Password = "password1"
             };
             CancellationToken cancellationToken = new CancellationToken();
